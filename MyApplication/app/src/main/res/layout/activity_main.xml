@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.komarov.mycalculator.MainActivity">
+    tools:context="com.komarov.calculator.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="4"
         android:orientation="vertical">
 
@@ -16,19 +16,23 @@
             android:id="@+id/txtSolution"
             style="@style/CalcTextView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:freezesText="true" />
 
         <TextView
             android:id="@+id/txtInput"
             style="@style/CalcTextView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:freezesText="true" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="3">
 
         <android.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -116,7 +120,6 @@
             <Button
                 android:id="@+id/buttonResult"
                 style="@style/CalcButton"
-                android:layout_width="wrap_content"
                 android:layout_gravity="fill"
                 android:layout_rowSpan="2"
                 android:text="@string/button_eq" />

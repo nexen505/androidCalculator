@@ -17,6 +17,8 @@
     <style name="CalcTextView">
         <item name="android:textSize">15pt</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:gravity">right</item>
+        <item name="android:padding">2dp</item>
     </style>
 
 </resources>
