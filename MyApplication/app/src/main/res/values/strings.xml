@@ -21,4 +21,5 @@
     <string name="button_clear">C</string>
     <string name="title_activity_engineer_calc">Инженерный</string>
     <string name="title_activity_main_calc">Обычный</string>
+    <string name="title_activity_main">Калькулятор</string>
 </resources>

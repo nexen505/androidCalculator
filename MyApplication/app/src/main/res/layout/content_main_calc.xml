@@ -46,24 +46,24 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/buttonClear"
+                android:id="@+id/buttonAdd"
                 style="@style/CalcButton"
-                android:text="@string/button_clear" />
+                android:text="@string/button_plus" />
 
             <Button
-                android:id="@+id/buttonBackspace"
+                android:id="@+id/buttonSubtract"
                 style="@style/CalcButton"
-                android:text="@string/button_backspace" />
-
-            <Button
-                android:id="@+id/buttonDiv"
-                style="@style/CalcButton"
-                android:text="@string/button_div" />
+                android:text="@string/button_sub" />
 
             <Button
                 android:id="@+id/buttonMul"
                 style="@style/CalcButton"
                 android:text="@string/button_mul" />
+
+            <Button
+                android:id="@+id/buttonDiv"
+                style="@style/CalcButton"
+                android:text="@string/button_div" />
 
             <Button
                 android:id="@+id/buttonSeven"
@@ -81,9 +81,9 @@
                 android:text="@string/button_number_9" />
 
             <Button
-                android:id="@+id/buttonSubtract"
+                android:id="@+id/buttonPercent"
                 style="@style/CalcButton"
-                android:text="@string/button_sub" />
+                android:text="@string/button_percent" />
 
             <Button
                 android:id="@+id/buttonFour"
@@ -101,9 +101,9 @@
                 android:text="@string/button_number_6" />
 
             <Button
-                android:id="@+id/buttonAdd"
+                android:id="@+id/buttonClear"
                 style="@style/CalcButton"
-                android:text="@string/button_plus" />
+                android:text="@string/button_clear" />
 
             <Button
                 android:id="@+id/buttonOne"
@@ -120,17 +120,11 @@
                 style="@style/CalcButton"
                 android:text="@string/button_number_3" />
 
-            <!--<Button-->
-            <!--android:id="@+id/buttonResult"-->
-            <!--style="@style/CalcButton"-->
-            <!--android:layout_gravity="fill"-->
-            <!--android:layout_rowSpan="2"-->
-            <!--android:text="@string/button_eq" />-->
-
             <Button
-                android:id="@+id/buttonPercent"
+                android:id="@+id/buttonBackspace"
                 style="@style/CalcButton"
-                android:text="@string/button_percent" />
+                android:text="@string/button_backspace" />
+
 
             <Button
                 android:id="@+id/buttonZero"

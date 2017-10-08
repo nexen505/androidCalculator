@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class MainCalcActivity extends AppCompatActivity {
 
-    Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, buttonPercent, buttonDot, buttonClear, buttonBackpace, buttonDiv, buttonMul, buttonAdd, buttonSub, buttonResult;
+    Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, buttonPercent, buttonDot, buttonClear, buttonBackpace, buttonDiv, buttonMul, buttonAdd, buttonSub;
 
     TextView textInput, textResult;
 
@@ -56,7 +56,6 @@ public class MainCalcActivity extends AppCompatActivity {
         buttonMul = (Button) findViewById(R.id.buttonMul);
         buttonAdd = (Button) findViewById(R.id.buttonAdd);
         buttonSub = (Button) findViewById(R.id.buttonSubtract);
-//        buttonResult = (Button) findViewById(R.id.buttonResult);
 
         textInput = (TextView) findViewById(R.id.txtInput);
         textResult = (TextView) findViewById(R.id.txtSolution);
