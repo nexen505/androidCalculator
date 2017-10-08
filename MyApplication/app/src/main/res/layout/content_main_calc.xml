@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.komarov.calculator.MainActivity">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.komarov.calculator.MainCalcActivity"
+    tools:showIn="@layout/activity_main_calc">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -117,12 +120,12 @@
                 style="@style/CalcButton"
                 android:text="@string/button_number_3" />
 
-            <Button
-                android:id="@+id/buttonResult"
-                style="@style/CalcButton"
-                android:layout_gravity="fill"
-                android:layout_rowSpan="2"
-                android:text="@string/button_eq" />
+            <!--<Button-->
+            <!--android:id="@+id/buttonResult"-->
+            <!--style="@style/CalcButton"-->
+            <!--android:layout_gravity="fill"-->
+            <!--android:layout_rowSpan="2"-->
+            <!--android:text="@string/button_eq" />-->
 
             <Button
                 android:id="@+id/buttonPercent"

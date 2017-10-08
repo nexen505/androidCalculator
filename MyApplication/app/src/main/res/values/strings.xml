@@ -19,4 +19,6 @@
     <string name="button_dot">.</string>
     <string name="button_backspace">&lt;</string>
     <string name="button_clear">C</string>
+    <string name="title_activity_engineer_calc">Инженерный</string>
+    <string name="title_activity_main_calc">Обычный</string>
 </resources>

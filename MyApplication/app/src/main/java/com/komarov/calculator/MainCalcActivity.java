@@ -2,12 +2,15 @@ package com.komarov.calculator;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainCalcActivity extends AppCompatActivity {
 
     Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, buttonPercent, buttonDot, buttonClear, buttonBackpace, buttonDiv, buttonMul, buttonAdd, buttonSub, buttonResult;
 
@@ -25,7 +28,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_calc);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(view -> {
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+        });
+
         button0 = (Button) findViewById(R.id.buttonZero);
         button1 = (Button) findViewById(R.id.buttonOne);
         button2 = (Button) findViewById(R.id.buttonTwo);
@@ -44,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         buttonMul = (Button) findViewById(R.id.buttonMul);
         buttonAdd = (Button) findViewById(R.id.buttonAdd);
         buttonSub = (Button) findViewById(R.id.buttonSubtract);
-        buttonResult = (Button) findViewById(R.id.buttonResult);
+//        buttonResult = (Button) findViewById(R.id.buttonResult);
 
         textInput = (TextView) findViewById(R.id.txtInput);
         textResult = (TextView) findViewById(R.id.txtSolution);
