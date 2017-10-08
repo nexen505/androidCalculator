@@ -10,8 +10,13 @@
     <string name="button_number_7">7</string>
     <string name="button_number_8">8</string>
     <string name="button_number_9">9</string>
-    <string name="button_number_+">+</string>
-    <string name="button_number_-">-</string>
-    <string name="button_number_*">*</string>
-    <string name="button_number_/">/</string>
+    <string name="button_plus">+</string>
+    <string name="button_sub">-</string>
+    <string name="button_mul">&#10005;</string>
+    <string name="button_div">&#247;</string>
+    <string name="button_eq">=</string>
+    <string name="button_percent">%</string>
+    <string name="button_dot">.</string>
+    <string name="button_backspace">&lt;</string>
+    <string name="button_clear">C</string>
 </resources>

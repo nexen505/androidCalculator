@@ -1,15 +1,22 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">#FFF5F5F5</item>
+        <item name="colorPrimaryDark">#FF757575</item>
+        <item name="colorAccent">#FF009688</item>
     </style>
 
     <style name="CalcButton">
+        <item name="android:background">@drawable/button</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#FF009688</item>
+    </style>
 
+    <style name="CalcTextView">
+        <item name="android:textSize">15pt</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>
