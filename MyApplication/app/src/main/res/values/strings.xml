@@ -22,4 +22,17 @@
     <string name="title_activity_engineer_calc">Инженерный</string>
     <string name="title_activity_main_calc">Обычный</string>
     <string name="title_activity_main">Калькулятор</string>
+
+    <string name="menu_about">О программе</string>
+    <string name="menu_about_title">О программе</string>
+    <string name="menu_about_message">Это калькулятор Комарова Ильи, 6133!</string>
+
+    <string name="menu_exit">Выход</string>
+    <string name="menu_exit_title">Выход</string>
+    <string name="menu_exit_message">Вы уверены, что хотите выйти?</string>
+    <string name="menu_exit_cancel_text">Вот и правильно!</string>
+
+    <string name="button_ok">Оk</string>
+    <string name="button_cancel">Отмена</string>
+
 </resources>
