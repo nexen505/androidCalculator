@@ -4,7 +4,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -14,12 +13,16 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.komarov.calculator.R;
+import com.komarov.calculator.utils.CalcPerformer;
 
 public class MainCalcFragment extends Fragment {
 
     Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, buttonPercent, buttonDot, buttonClear, buttonBackpace, buttonDiv, buttonMul, buttonAdd, buttonSub;
 
     TextView textInput, textResult;
+
+    CalcPerformer calcPerformer;
+    int operationPosition;
 
     private String getResourceText(int id) {
         String text = getResources().getString(id);
@@ -33,12 +36,7 @@ public class MainCalcFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_main_calc, container, false);
-
-        FloatingActionButton fab = view.findViewById(R.id.fab);
-        fab.setOnClickListener(v -> {
-            Snackbar.make(v, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
-        });
+        calcPerformer = new CalcPerformer();
 
         initBasicButtons(view);
 
@@ -82,43 +80,118 @@ public class MainCalcFragment extends Fragment {
         });
 
         button0.setOnClickListener(v -> {
-            textInput.setText(textInput.getText() + getResourceText(R.string.button_number_0));
+            textInput.append(getResourceText(R.string.button_number_0));
         });
 
         button1.setOnClickListener(v -> {
-            textInput.setText(textInput.getText() + getResourceText(R.string.button_number_1));
+            textInput.append(getResourceText(R.string.button_number_1));
         });
 
         button2.setOnClickListener(v -> {
-            textInput.setText(textInput.getText() + getResourceText(R.string.button_number_2));
+            textInput.append(getResourceText(R.string.button_number_2));
         });
 
         button3.setOnClickListener(v -> {
-            textInput.setText(textInput.getText() + getResourceText(R.string.button_number_3));
+            textInput.append(getResourceText(R.string.button_number_3));
         });
 
         button4.setOnClickListener(v -> {
-            textInput.setText(textInput.getText() + getResourceText(R.string.button_number_4));
+            textInput.append(getResourceText(R.string.button_number_4));
         });
 
         button5.setOnClickListener(v -> {
-            textInput.setText(textInput.getText() + getResourceText(R.string.button_number_5));
+            textInput.append(getResourceText(R.string.button_number_5));
         });
 
         button6.setOnClickListener(v -> {
-            textInput.setText(textInput.getText() + getResourceText(R.string.button_number_6));
+            textInput.append(getResourceText(R.string.button_number_6));
         });
 
         button7.setOnClickListener(v -> {
-            textInput.setText(textInput.getText() + getResourceText(R.string.button_number_7));
+            textInput.append(getResourceText(R.string.button_number_7));
         });
 
         button8.setOnClickListener(v -> {
-            textInput.setText(textInput.getText() + getResourceText(R.string.button_number_8));
+            textInput.append(getResourceText(R.string.button_number_8));
         });
 
         button9.setOnClickListener(v -> {
-            textInput.setText(textInput.getText() + getResourceText(R.string.button_number_9));
+            textInput.append(getResourceText(R.string.button_number_9));
         });
+
+        buttonAdd.setOnClickListener(v -> {
+            if (isNumberLast()) {
+                String s = textInput.getText().toString();
+                calcPerformer.setA(Double.parseDouble(s));
+                calcPerformer.setOperation(CalcPerformer.Operation.ADD);
+                operationPosition = s.length();
+                textInput.append(getResourceText(R.string.button_plus));
+            }
+        });
+
+        buttonSub.setOnClickListener(v -> {
+            if (isNumberLast()) {
+                String s = textInput.getText().toString();
+                calcPerformer.setA(Double.parseDouble(s));
+                calcPerformer.setOperation(CalcPerformer.Operation.SUBTRACT);
+                operationPosition = s.length();
+                textInput.append(getResourceText(R.string.button_sub));
+            }
+        });
+
+        buttonMul.setOnClickListener(v -> {
+            if (isNumberLast()) {
+                String s = textInput.getText().toString();
+                calcPerformer.setA(Double.parseDouble(s));
+                calcPerformer.setOperation(CalcPerformer.Operation.MULTIPLICATION);
+                operationPosition = s.length();
+                textInput.append(getResourceText(R.string.button_mul));
+            }
+        });
+
+        buttonDiv.setOnClickListener(v -> {
+            if (isNumberLast()) {
+                String s = textInput.getText().toString();
+                calcPerformer.setA(Double.parseDouble(s));
+                calcPerformer.setOperation(CalcPerformer.Operation.DIVISION);
+                operationPosition = s.length();
+                textInput.append(getResourceText(R.string.button_div));
+            }
+        });
+
+        FloatingActionButton fab = view.findViewById(R.id.fab);
+        fab.setOnClickListener(v -> {
+            String s = textInput.getText().toString();
+            Double b = Double.parseDouble(s.substring(operationPosition + 1));
+            calcPerformer.setB(b);
+            String result = calcPerformer.getResult().toString();
+            String historical = s.concat(getResourceText(R.string.button_eq)).concat(result);
+            textResult.setText(textResult.getText() + "\n" + historical);
+            textInput.setText(result);
+        });
+
     }
+
+    private char getLastSymbol() {
+        CharSequence text = textInput.getText();
+        return text.length() != 0 ? text.charAt(text.length() - 1) : '\0';
+    }
+
+    private boolean isNumberLast() {
+        return Character.isDigit(getLastSymbol());
+    }
+
+    private CalcPerformer.Operation getLastOperation() {
+        String opText = String.valueOf(getLastSymbol());
+        if (opText.equals(getResourceText(R.string.button_plus)))
+            return CalcPerformer.Operation.ADD;
+        if (opText.equals(getResourceText(R.string.button_sub)))
+            return CalcPerformer.Operation.SUBTRACT;
+        if (opText.equals(getResourceText(R.string.button_mul)))
+            return CalcPerformer.Operation.MULTIPLICATION;
+        if (opText.equals(getResourceText(R.string.button_div)))
+            return CalcPerformer.Operation.DIVISION;
+        return null;
+    }
+
 }
