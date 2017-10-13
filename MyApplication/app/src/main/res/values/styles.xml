@@ -6,6 +6,7 @@
         <item name="colorPrimary">#FFF5F5F5</item>
         <item name="colorPrimaryDark">#FF757575</item>
         <item name="colorAccent">#FF009688</item>
+        <item name="android:actionMenuTextAppearance">@style/MenuItem</item>
     </style>
 
     <style name="CalcButton">
@@ -19,6 +20,13 @@
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">right</item>
         <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="MenuItem">
+        <item name="android:textSize">20pt</item>
+        <item name="android:gravity">right</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:textColor">@color/general_text_color</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

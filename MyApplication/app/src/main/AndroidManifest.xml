@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.EngineerCalcActivity"
+            android:name=".activity.EngineerCalcFragment"
             android:label="@string/title_activity_engineer_calc"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.MainCalcActivity"
+            android:name=".activity.MainCalcFragment"
             android:label="@string/title_activity_main_calc"
             android:theme="@style/AppTheme"></activity>
         <activity

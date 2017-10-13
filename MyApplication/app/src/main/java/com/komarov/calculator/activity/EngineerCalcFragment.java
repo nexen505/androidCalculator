@@ -2,17 +2,20 @@ package com.komarov.calculator.activity;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.support.v4.app.Fragment;
 import android.text.Html;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.komarov.calculator.R;
 
-public class MainCalcActivity extends AppCompatActivity {
+public class EngineerCalcFragment extends Fragment {
 
     Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, buttonPercent, buttonDot, buttonClear, buttonBackpace, buttonDiv, buttonMul, buttonAdd, buttonSub;
 
@@ -28,39 +31,43 @@ public class MainCalcActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_calc);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_engineer_calc, container, false);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(view -> {
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+        FloatingActionButton fab = view.findViewById(R.id.fab);
+        fab.setOnClickListener(v -> {
+            Snackbar.make(v, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         });
 
-        button0 = (Button) findViewById(R.id.buttonZero);
-        button1 = (Button) findViewById(R.id.buttonOne);
-        button2 = (Button) findViewById(R.id.buttonTwo);
-        button3 = (Button) findViewById(R.id.buttonThree);
-        button4 = (Button) findViewById(R.id.buttonFour);
-        button5 = (Button) findViewById(R.id.buttonFive);
-        button6 = (Button) findViewById(R.id.buttonSix);
-        button7 = (Button) findViewById(R.id.buttonSeven);
-        button8 = (Button) findViewById(R.id.buttonEight);
-        button9 = (Button) findViewById(R.id.buttonNine);
-        buttonPercent = (Button) findViewById(R.id.buttonPercent);
-        buttonDot = (Button) findViewById(R.id.buttonDot);
-        buttonClear = (Button) findViewById(R.id.buttonClear);
-        buttonBackpace = (Button) findViewById(R.id.buttonBackspace);
-        buttonDiv = (Button) findViewById(R.id.buttonDiv);
-        buttonMul = (Button) findViewById(R.id.buttonMul);
-        buttonAdd = (Button) findViewById(R.id.buttonAdd);
-        buttonSub = (Button) findViewById(R.id.buttonSubtract);
+        initBasicButtons(view);
 
-        textInput = (TextView) findViewById(R.id.txtInput);
-        textResult = (TextView) findViewById(R.id.txtSolution);
+        return view;
+    }
+
+
+    private void initBasicButtons(View view) {
+        button0 = view.findViewById(R.id.buttonZero);
+        button1 = view.findViewById(R.id.buttonOne);
+        button2 = view.findViewById(R.id.buttonTwo);
+        button3 = view.findViewById(R.id.buttonThree);
+        button4 = view.findViewById(R.id.buttonFour);
+        button5 = view.findViewById(R.id.buttonFive);
+        button6 = view.findViewById(R.id.buttonSix);
+        button7 = view.findViewById(R.id.buttonSeven);
+        button8 = view.findViewById(R.id.buttonEight);
+        button9 = view.findViewById(R.id.buttonNine);
+        buttonPercent = view.findViewById(R.id.buttonPercent);
+        buttonDot = view.findViewById(R.id.buttonDot);
+        buttonClear = view.findViewById(R.id.buttonClear);
+        buttonBackpace = view.findViewById(R.id.buttonBackspace);
+        buttonDiv = view.findViewById(R.id.buttonDiv);
+        buttonMul = view.findViewById(R.id.buttonMul);
+        buttonAdd = view.findViewById(R.id.buttonAdd);
+        buttonSub = view.findViewById(R.id.buttonSubtract);
+
+        textInput = view.findViewById(R.id.txtInput);
+        textResult = view.findViewById(R.id.txtSolution);
         textInput.setText("");
         textResult.setText("");
 
@@ -114,10 +121,6 @@ public class MainCalcActivity extends AppCompatActivity {
         button9.setOnClickListener(v -> {
             textInput.setText(textInput.getText() + getResourceText(R.string.button_number_9));
         });
-
-        button0.setOnClickListener(v -> {
-            textInput.setText(textInput.getText() + getResourceText(R.string.button_number_0));
-        });
-
     }
+
 }

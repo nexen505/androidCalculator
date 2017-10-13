@@ -4,10 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
@@ -15,7 +15,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TabHost;
 import android.widget.Toast;
 
 import com.komarov.calculator.R;
@@ -25,6 +24,8 @@ public class MainActivity extends AppCompatActivity
 
     private Context context;
     private DrawerLayout drawer;
+    private SectionPagerAdapter mSectionsPageAdapter;
+    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,27 +35,29 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
-        tabHost.setup();
-        TabHost.TabSpec tabSpec;
+        mSectionsPageAdapter = new SectionPagerAdapter(getSupportFragmentManager());
+        mViewPager = (ViewPager) findViewById(R.id.container);
+        mSectionsPageAdapter.addFragment(new MainCalcFragment(), getResources().getString(R.string.title_activity_main_calc));
+        mSectionsPageAdapter.addFragment(new EngineerCalcFragment(), getResources().getString(R.string.title_activity_engineer_calc));
+        mViewPager.setAdapter(mSectionsPageAdapter);
 
-        tabSpec = tabHost.newTabSpec("tagMain");
-        tabSpec.setIndicator(getResources().getString(R.string.title_activity_main_calc));
-        tabSpec.setContent(R.id.mainCalcLayout);
-        tabHost.addTab(tabSpec);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(mViewPager);
 
-        tabSpec = tabHost.newTabSpec("tagEngineer");
-        tabSpec.setIndicator(getResources().getString(R.string.title_activity_engineer_calc));
-        tabSpec.setContent(R.id.engineerCalcLayout);
-        tabHost.addTab(tabSpec);
-
-        tabHost.setCurrentTab(0);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(view -> {
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
-        });
+//        TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
+//        tabHost.setup(new LocalActivityManager(this, false));
+//
+//        TabHost.TabSpec tabSpec = tabHost.newTabSpec("tagMain")
+//                .setIndicator(getResources().getString(R.string.title_activity_main_calc))
+//                .setContent(new Intent(getApplicationContext(), MainCalcFragment.class));
+//        tabHost.addTab(tabSpec);
+//
+//        tabSpec = tabHost.newTabSpec("tagEngineer")
+//                .setIndicator(getResources().getString(R.string.title_activity_engineer_calc))
+//                .setContent(new Intent(getApplicationContext(), EngineerCalcFragment.class));
+//        tabHost.addTab(tabSpec);
+//
+//        tabHost.setCurrentTab(0);
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -65,6 +68,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
