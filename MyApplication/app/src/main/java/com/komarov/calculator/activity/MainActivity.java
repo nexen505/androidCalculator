@@ -44,21 +44,6 @@ public class MainActivity extends AppCompatActivity
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-//        TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
-//        tabHost.setup(new LocalActivityManager(this, false));
-//
-//        TabHost.TabSpec tabSpec = tabHost.newTabSpec("tagMain")
-//                .setIndicator(getResources().getString(R.string.title_activity_main_calc))
-//                .setContent(new Intent(getApplicationContext(), MainCalcFragment.class));
-//        tabHost.addTab(tabSpec);
-//
-//        tabSpec = tabHost.newTabSpec("tagEngineer")
-//                .setIndicator(getResources().getString(R.string.title_activity_engineer_calc))
-//                .setContent(new Intent(getApplicationContext(), EngineerCalcFragment.class));
-//        tabHost.addTab(tabSpec);
-//
-//        tabHost.setCurrentTab(0);
-
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -119,6 +104,8 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         switch (id) {
+            case R.id.nav_calc:
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             case R.id.nav_history:
                 break;
             case R.id.nav_graphs:

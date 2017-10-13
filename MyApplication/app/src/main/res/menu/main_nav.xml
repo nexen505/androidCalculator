@@ -4,6 +4,10 @@
         android:id="@+id/grp1"
         android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_calc"
+            android:checked="true"
+            android:title="@string/nav_calc" />
+        <item
             android:id="@+id/nav_history"
             android:title="@string/nav_history" />
         <item

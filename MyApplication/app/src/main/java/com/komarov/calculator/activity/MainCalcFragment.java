@@ -164,9 +164,10 @@ public class MainCalcFragment extends Fragment {
             String s = textInput.getText().toString();
             Double b = Double.parseDouble(s.substring(operationPosition + 1));
             calcPerformer.setB(b);
-            String result = calcPerformer.getResult().toString();
+            Double calcPerformerResult = calcPerformer.getResult();
+            String result = calcPerformerResult % 1 == 0 ? String.valueOf(calcPerformerResult.intValue()) : calcPerformerResult.toString();
             String historical = s.concat(getResourceText(R.string.button_eq)).concat(result);
-            textResult.setText(textResult.getText() + "\n" + historical);
+            textResult.append("\n" + historical);
             textInput.setText(result);
         });
 

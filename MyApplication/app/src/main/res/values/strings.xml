@@ -34,6 +34,7 @@
     <string name="menu_exit_message">Вы уверены, что хотите выйти?</string>
     <string name="menu_exit_cancel_text">Вот и правильно!</string>
 
+    <string name="nav_calc">Калькулятор</string>
     <string name="nav_history">История</string>
     <string name="nav_graphs">Графики</string>
     <string name="nav_settings">Настройки</string>
