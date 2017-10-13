@@ -47,6 +47,7 @@
 
     <string name="settings_act">Настройки</string>
     <string name="settings_general">Общие</string>
+    <string name="settings_degrees">Измерение углов</string>
     <string name="settings_text_default">Текст по умолчанию</string>
     <string name="settings_text">Текст</string>
     <string name="settings_switch">Сохранять результаты</string>
@@ -62,5 +63,11 @@
     <string name="datepicker_title">Когда я учил матан</string>
     <string name="datepicker_choose_date">Выберите дату</string>
     <string name="datepicker_ready">Готово</string>
+
+    <string-array name="settings_degrees">
+        <item>Градусы</item>
+        <item>Радианы</item>
+        <item>Стерадианы</item>
+    </string-array>
 
 </resources>

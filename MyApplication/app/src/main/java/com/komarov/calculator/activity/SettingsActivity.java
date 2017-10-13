@@ -6,12 +6,14 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -31,6 +33,7 @@ public class SettingsActivity extends AppCompatActivity {
     private Switch saveResultsSwitch;
     private DatePicker datePicker;
     private Button colorButton;
+    private Spinner degreesSpinner;
     private SharedPreferences mSettings;
     private SharedPreferences.Editor editor;
 
@@ -39,6 +42,8 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         mSettings = getSharedPreferences("mySettings", Context.MODE_PRIVATE);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         final Calendar c = Calendar.getInstance();
         year = c.get(Calendar.YEAR);
@@ -50,6 +55,7 @@ public class SettingsActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.set_text);
         dateTextView = (TextView) findViewById(R.id.dateView);
         colorButton = (Button) findViewById(R.id.color_btn);
+        degreesSpinner = (Spinner) findViewById(R.id.degrees_spinner);
 
         storedDate = Integer.toString(day) + "." + Integer.toString(month) + "." + Integer.toString(year);
 
@@ -146,8 +152,11 @@ public class SettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
         outState.putInt("selectedColor", selectedColor);
         outState.putString("dialogTextValue", dialogTextValue);
+        outState.putInt("degreesSpinner", degreesSpinner.getSelectedItemPosition());
+
         if (isDateDialogOpened && datePicker != null) {
             outState.putInt("day", datePicker.getDayOfMonth());
             outState.putInt("month", datePicker.getMonth());
@@ -157,20 +166,20 @@ public class SettingsActivity extends AppCompatActivity {
         outState.putBoolean("isTextDialogOpened", isTextDialogOpened);
         outState.putBoolean("isColorDialogOpened", isColorDialogOpened);
         outState.putBoolean("isDateDialogOpened", isDateDialogOpened);
-        super.onSaveInstanceState(outState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        isDateDialogOpened = savedInstanceState.getBoolean("isDateDialogOpened");
-        isTextDialogOpened = savedInstanceState.getBoolean("isTextDialogOpened");
-        isColorDialogOpened = savedInstanceState.getBoolean("isColorDialogOpened");
+        isDateDialogOpened = savedInstanceState.getBoolean("isDateDialogOpened", false);
+        isTextDialogOpened = savedInstanceState.getBoolean("isTextDialogOpened", false);
+        isColorDialogOpened = savedInstanceState.getBoolean("isColorDialogOpened", false);
+        degreesSpinner.setSelection(savedInstanceState.getInt("degreesSpinner", 0));
 
         if (isColorDialogOpened) {
-            selectedColor = savedInstanceState.getInt("selectedColor");
+            selectedColor = savedInstanceState.getInt("selectedColor", ((ColorDrawable) colorButton.getBackground()).getColor());
             openColorDialog(selectedColor);
         } else if (isTextDialogOpened) {
-            dialogTextValue = savedInstanceState.getString("dialogTextValue");
+            dialogTextValue = savedInstanceState.getString("dialogTextValue", dialogText.getText().toString());
             openTextDialog(dialogTextValue);
         } else if (isDateDialogOpened) {
             int savedDay = savedInstanceState.getInt("day");
