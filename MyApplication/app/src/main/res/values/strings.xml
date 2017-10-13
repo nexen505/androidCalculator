@@ -20,6 +20,17 @@
     <string name="button_dot">.</string>
     <string name="button_backspace">C</string>
     <string name="button_clear">CC</string>
+    <string name="button_fact">!</string>
+    <string name="button_pow">^</string>
+    <string name="button_sqrt">&#8730;</string>
+    <string name="button_pi">&#960;</string>
+    <string name="button_sin">sin</string>
+    <string name="button_cos">cos</string>
+    <string name="button_tan">tan</string>
+    <string name="button_ln">ln</string>
+    <string name="button_left_bracket">(</string>
+    <string name="button_right_bracket">)</string>
+    <string name="button_e">e</string>
 
     <string name="title_activity_engineer_calc">Инженерный</string>
     <string name="title_activity_main_calc">Обычный</string>

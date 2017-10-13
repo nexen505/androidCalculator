@@ -54,32 +54,81 @@
         android:padding="16dp">
 
         <Button
-            android:id="@+id/buttonAdd"
+            android:id="@+id/buttonFact"
             style="@style/CalcButton"
             android:layout_columnSpan="1"
             android:layout_rowSpan="1"
-            android:text="@string/button_plus" />
+            android:text="@string/button_fact" />
 
         <Button
-            android:id="@+id/buttonSubtract"
+            android:id="@+id/buttonPow"
             style="@style/CalcButton"
             android:layout_columnSpan="1"
             android:layout_rowSpan="1"
-            android:text="@string/button_sub" />
+            android:text="@string/button_pow" />
 
         <Button
-            android:id="@+id/buttonMul"
+            android:id="@+id/buttonSqrt"
             style="@style/CalcButton"
             android:layout_columnSpan="1"
             android:layout_rowSpan="1"
-            android:text="@string/button_mul" />
+            android:text="@string/button_sqrt" />
 
         <Button
-            android:id="@+id/buttonDiv"
+            android:id="@+id/buttonPi"
             style="@style/CalcButton"
             android:layout_columnSpan="1"
             android:layout_rowSpan="1"
-            android:text="@string/button_div" />
+            android:text="@string/button_pi" />
+
+        <Button
+            android:id="@+id/buttonClear"
+            style="@style/CalcButton"
+            android:layout_columnSpan="1"
+            android:layout_rowSpan="1"
+            android:text="@string/button_clear" />
+
+        <Button
+            android:id="@+id/buttonSin"
+            style="@style/CalcButton"
+            android:layout_columnSpan="1"
+            android:layout_rowSpan="1"
+            android:text="@string/button_sin" />
+
+        <Button
+            android:id="@+id/buttonLeftBracket"
+            style="@style/CalcButton"
+            android:layout_columnSpan="1"
+            android:layout_rowSpan="1"
+            android:text="@string/button_left_bracket" />
+
+        <Button
+            android:id="@+id/buttonRightBracket"
+            style="@style/CalcButton"
+            android:layout_columnSpan="1"
+            android:layout_rowSpan="1"
+            android:text="@string/button_right_bracket" />
+
+        <Button
+            android:id="@+id/buttonE"
+            style="@style/CalcButton"
+            android:layout_columnSpan="1"
+            android:layout_rowSpan="1"
+            android:text="@string/button_e" />
+
+        <Button
+            android:id="@+id/buttonBackspace"
+            style="@style/CalcButton"
+            android:layout_columnSpan="1"
+            android:layout_rowSpan="1"
+            android:text="@string/button_backspace" />
+
+        <Button
+            android:id="@+id/buttonCos"
+            style="@style/CalcButton"
+            android:layout_columnSpan="1"
+            android:layout_rowSpan="1"
+            android:text="@string/button_cos" />
 
         <Button
             android:id="@+id/buttonSeven"
@@ -103,11 +152,18 @@
             android:text="@string/button_number_9" />
 
         <Button
-            android:id="@+id/buttonPercent"
+            android:id="@+id/buttonDiv"
             style="@style/CalcButton"
             android:layout_columnSpan="1"
             android:layout_rowSpan="1"
-            android:text="@string/button_percent" />
+            android:text="@string/button_div" />
+
+        <Button
+            android:id="@+id/buttonTan"
+            style="@style/CalcButton"
+            android:layout_columnSpan="1"
+            android:layout_rowSpan="1"
+            android:text="@string/button_tan" />
 
         <Button
             android:id="@+id/buttonFour"
@@ -131,11 +187,18 @@
             android:text="@string/button_number_6" />
 
         <Button
-            android:id="@+id/buttonClear"
+            android:id="@+id/buttonMul"
             style="@style/CalcButton"
             android:layout_columnSpan="1"
             android:layout_rowSpan="1"
-            android:text="@string/button_clear" />
+            android:text="@string/button_mul" />
+
+        <Button
+            android:id="@+id/buttonLn"
+            style="@style/CalcButton"
+            android:layout_columnSpan="1"
+            android:layout_rowSpan="1"
+            android:text="@string/button_ln" />
 
         <Button
             android:id="@+id/buttonOne"
@@ -159,12 +222,25 @@
             android:text="@string/button_number_3" />
 
         <Button
-            android:id="@+id/buttonBackspace"
+            android:id="@+id/buttonAdd"
             style="@style/CalcButton"
             android:layout_columnSpan="1"
             android:layout_rowSpan="1"
-            android:text="@string/button_backspace" />
+            android:text="@string/button_plus" />
 
+        <Button
+            android:id="@+id/buttonSubtract"
+            style="@style/CalcButton"
+            android:layout_columnSpan="1"
+            android:layout_rowSpan="1"
+            android:text="@string/button_sub" />
+
+        <Button
+            android:id="@+id/buttonPercent"
+            style="@style/CalcButton"
+            android:layout_columnSpan="1"
+            android:layout_rowSpan="1"
+            android:text="@string/button_percent" />
 
         <Button
             android:id="@+id/buttonZero"
