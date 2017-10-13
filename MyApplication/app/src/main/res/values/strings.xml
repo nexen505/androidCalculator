@@ -51,10 +51,15 @@
     <string name="settings_switch">Сохранять результаты</string>
     <string name="settings_color">Цвет</string>
 
+    <string name="colorpicker_title">Выберите цвет</string>
     <string name="text_dialog_header">Введите текст</string>
     <string name="text_dialog_hint">Здесь..</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="datepicker_title">Когда я учил матан</string>
+    <string name="datepicker_choose_date">Выберите дату</string>
+    <string name="datepicker_ready">Готово</string>
 
 </resources>

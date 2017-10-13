@@ -1,4 +1,4 @@
-package com.komarov.calculator;
+package com.komarov.calculator.activity;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.komarov.calculator.R;
 
 public class MainCalcActivity extends AppCompatActivity {
 
