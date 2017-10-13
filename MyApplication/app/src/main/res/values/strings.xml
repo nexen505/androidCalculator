@@ -18,8 +18,8 @@
     <string name="button_eq">=</string>
     <string name="button_percent">%</string>
     <string name="button_dot">.</string>
-    <string name="button_backspace">&lt;</string>
-    <string name="button_clear">C</string>
+    <string name="button_backspace">C</string>
+    <string name="button_clear">CC</string>
 
     <string name="title_activity_engineer_calc">Инженерный</string>
     <string name="title_activity_main_calc">Обычный</string>
