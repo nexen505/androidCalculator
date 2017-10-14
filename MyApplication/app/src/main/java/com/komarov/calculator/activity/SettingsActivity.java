@@ -170,22 +170,25 @@ public class SettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        isDateDialogOpened = savedInstanceState.getBoolean("isDateDialogOpened", false);
-        isTextDialogOpened = savedInstanceState.getBoolean("isTextDialogOpened", false);
-        isColorDialogOpened = savedInstanceState.getBoolean("isColorDialogOpened", false);
-        degreesSpinner.setSelection(savedInstanceState.getInt("degreesSpinner", 0));
+        super.onRestoreInstanceState(savedInstanceState);
+        if (savedInstanceState != null) {
+            isDateDialogOpened = savedInstanceState.getBoolean("isDateDialogOpened", false);
+            isTextDialogOpened = savedInstanceState.getBoolean("isTextDialogOpened", false);
+            isColorDialogOpened = savedInstanceState.getBoolean("isColorDialogOpened", false);
+            degreesSpinner.setSelection(savedInstanceState.getInt("degreesSpinner", 0));
 
-        if (isColorDialogOpened) {
-            selectedColor = savedInstanceState.getInt("selectedColor", ((ColorDrawable) colorButton.getBackground()).getColor());
-            openColorDialog(selectedColor);
-        } else if (isTextDialogOpened) {
-            dialogTextValue = savedInstanceState.getString("dialogTextValue", dialogText.getText().toString());
-            openTextDialog(dialogTextValue);
-        } else if (isDateDialogOpened) {
-            int savedDay = savedInstanceState.getInt("day");
-            int savedMonth = savedInstanceState.getInt("month");
-            int savedYear = savedInstanceState.getInt("year");
-            openDateDialog(savedDay, savedMonth, savedYear);
+            if (isColorDialogOpened) {
+                selectedColor = savedInstanceState.getInt("selectedColor", ((ColorDrawable) colorButton.getBackground()).getColor());
+                openColorDialog(selectedColor);
+            } else if (isTextDialogOpened) {
+                dialogTextValue = savedInstanceState.getString("dialogTextValue", dialogText.getText().toString());
+                openTextDialog(dialogTextValue);
+            } else if (isDateDialogOpened) {
+                int savedDay = savedInstanceState.getInt("day");
+                int savedMonth = savedInstanceState.getInt("month");
+                int savedYear = savedInstanceState.getInt("year");
+                openDateDialog(savedDay, savedMonth, savedYear);
+            }
         }
     }
 }

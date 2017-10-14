@@ -119,6 +119,10 @@ public class EngineerCalcFragment extends Fragment {
             textInput.append(getResourceText(R.string.button_number_9));
         });
 
+        buttonDot.setOnClickListener(v -> {
+            textInput.append(getResourceText(R.string.button_dot));
+        });
+
         buttonAdd.setOnClickListener(v -> {
             if (isNumberLast()) {
                 String s = textInput.getText().toString();
