@@ -80,6 +80,7 @@
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/textView3"
             android:layout_toRightOf="@+id/textView3"
+            android:gravity="end"
             android:onClick="onInputText"
             android:text="@string/settings_text_default" />
     </RelativeLayout>
@@ -150,6 +151,7 @@
             android:layout_toEndOf="@+id/dateTitle"
             android:layout_toRightOf="@+id/dateTitle"
             android:clickable="true"
+            android:gravity="end"
             android:onClick="onChooseDate" />
     </RelativeLayout>
 

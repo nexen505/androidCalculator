@@ -58,6 +58,7 @@ public class SettingsActivity extends AppCompatActivity {
         degreesSpinner = (Spinner) findViewById(R.id.degrees_spinner);
 
         storedDate = Integer.toString(day) + "." + Integer.toString(month) + "." + Integer.toString(year);
+        dateTextView.setText(storedDate);
 
     }
 
@@ -155,6 +156,7 @@ public class SettingsActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         outState.putInt("selectedColor", selectedColor);
         outState.putString("dialogTextValue", dialogTextValue);
+        outState.putBoolean("saveResultsSwitch", saveResultsSwitch.isChecked());
         outState.putInt("degreesSpinner", degreesSpinner.getSelectedItemPosition());
 
         if (isDateDialogOpened && datePicker != null) {
@@ -176,6 +178,7 @@ public class SettingsActivity extends AppCompatActivity {
             isTextDialogOpened = savedInstanceState.getBoolean("isTextDialogOpened", false);
             isColorDialogOpened = savedInstanceState.getBoolean("isColorDialogOpened", false);
             degreesSpinner.setSelection(savedInstanceState.getInt("degreesSpinner", 0));
+            saveResultsSwitch.setChecked(savedInstanceState.getBoolean("saveResultsSwitch"));
 
             if (isColorDialogOpened) {
                 selectedColor = savedInstanceState.getInt("selectedColor", ((ColorDrawable) colorButton.getBackground()).getColor());

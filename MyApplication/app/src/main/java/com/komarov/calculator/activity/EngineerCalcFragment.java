@@ -3,7 +3,6 @@ package com.komarov.calculator.activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -17,7 +16,7 @@ import com.komarov.calculator.utils.CalcPerformer;
 
 public class EngineerCalcFragment extends Fragment {
 
-    Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, buttonPercent, buttonDot, buttonClear, buttonBackpace, buttonDiv, buttonMul, buttonAdd, buttonSub;
+    Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, buttonPercent, buttonDot, buttonClear, buttonBackpace, buttonDiv, buttonMul, buttonAdd, buttonSub, buttonEq;
 
     TextView textInput, textResult;
 
@@ -62,6 +61,7 @@ public class EngineerCalcFragment extends Fragment {
         buttonMul = view.findViewById(R.id.buttonMul);
         buttonAdd = view.findViewById(R.id.buttonAdd);
         buttonSub = view.findViewById(R.id.buttonSubtract);
+        buttonEq = view.findViewById(R.id.buttonEq);
 
         textInput = view.findViewById(R.id.txtInput);
         textResult = view.findViewById(R.id.txtSolution);
@@ -163,15 +163,14 @@ public class EngineerCalcFragment extends Fragment {
             }
         });
 
-        FloatingActionButton fab = view.findViewById(R.id.fab);
-        fab.setOnClickListener(v -> {
+        buttonEq.setOnClickListener(v -> {
             String s = textInput.getText().toString();
             Double b = Double.parseDouble(s.substring(operationPosition + 1));
             calcPerformer.setB(b);
             Double calcPerformerResult = calcPerformer.getResult();
             String result = calcPerformerResult % 1 == 0 ? String.valueOf(calcPerformerResult.intValue()) : calcPerformerResult.toString();
             String historical = s.concat(getResourceText(R.string.button_eq)).concat(result);
-            textResult.setText(textResult.getText() + "\n" + historical);
+            textResult.append("\n" + historical);
             textInput.setText(result);
         });
 
