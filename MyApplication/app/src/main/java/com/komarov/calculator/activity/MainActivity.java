@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.about: {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle(R.string.menu_about_title)
-                        .setIcon(R.drawable.ic_action_about)
+                        .setIcon(R.mipmap.ic_action_about)
                         .setMessage(R.string.menu_about_message)
                         .setCancelable(false)
                         .setNegativeButton(R.string.button_ok,
