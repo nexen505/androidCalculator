@@ -16,9 +16,6 @@
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.SettingsActivity"
-            android:label="@string/nav_settings" />
-        <activity
             android:name=".activity.MyPreferencesActivity"
             android:label="@string/nav_settings" />
         <activity android:name=".activity.SplashActivity">

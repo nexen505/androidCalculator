@@ -84,7 +84,7 @@
     <string name="pref_username">username</string>
     <string name="pref_angles">angles</string>
     <string name="pref_color">color</string>
-    <string name="text_view">2+2\n=\n5</string>
+    <string name="text_view">2+2=5</string>
 
     <string-array name="settings_degrees">
         <item>Градусы</item>
