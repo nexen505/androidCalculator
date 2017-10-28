@@ -6,15 +6,13 @@
 
     <color name="tail_color">#282828</color>
     <color name="general_text_color">#9f9b9c</color>
-    <color name="divider_color">#2c2c2c</color>
+    <color name="divider_color">#8e8a8a</color>
     <color name="font_color">#555555</color>
     <!--colors buttons-->
-    <color name="sea_color">#2aff24</color>
     <color name="background_color">#aaf2da</color>
     <color name="purple">#ff3cef</color>
     <color name="red_color">#ff0000</color>
     <color name="yellow_color">#f8ff37</color>
-    <color name="first_contact">#f9f9f9</color>
 
     <color name="settings_color">#43b4de</color>
     <color name="settings_divider_color">#202020</color>
