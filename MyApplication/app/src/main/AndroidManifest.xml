@@ -18,12 +18,20 @@
         <activity
             android:name=".activity.SettingsActivity"
             android:label="@string/nav_settings" />
+        <activity
+            android:name=".activity.MyPreferencesActivity"
+            android:label="@string/nav_settings" />
         <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.HistoryActivity"
+            android:label="@string/title_activity_history"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

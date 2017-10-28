@@ -31,6 +31,7 @@
     <string name="button_left_bracket">(</string>
     <string name="button_right_bracket">)</string>
     <string name="button_e">e</string>
+    <string name="button_find">Найти</string>
 
     <string name="title_activity_engineer_calc">Инженерный</string>
     <string name="title_activity_main_calc">Обычный</string>
@@ -58,11 +59,15 @@
 
     <string name="settings_act">Настройки</string>
     <string name="settings_general">Общие</string>
-    <string name="settings_degrees">Измерение углов</string>
+    <string name="settings_degrees">Углы</string>
+    <string name="settings_degrees_summary">Единицы измерения углов</string>
     <string name="settings_text_default">Текст по умолчанию</string>
-    <string name="settings_text">Текст</string>
+    <string name="settings_text">Имя пользователя</string>
     <string name="settings_switch">Сохранять результаты</string>
+    <string name="settings_text_summary">Отображаемое на экране имя пользователя</string>
+    <string name="settings_switch_summary">Результаты будут сохраняться при закрытии программы</string>
     <string name="settings_color">Цвет</string>
+    <string name="settings_color_summary">Выбор основной цвет</string>
 
     <string name="colorpicker_title">Выберите цвет</string>
     <string name="text_dialog_header">Введите текст</string>
@@ -75,10 +80,19 @@
     <string name="datepicker_choose_date">Выберите дату</string>
     <string name="datepicker_ready">Готово</string>
 
+    <string name="pref_saveResults">saveResults</string>
+    <string name="pref_username">username</string>
+    <string name="pref_angles">angles</string>
+    <string name="pref_color">color</string>
+    <string name="text_view">2+2\n=\n5</string>
+
     <string-array name="settings_degrees">
         <item>Градусы</item>
         <item>Радианы</item>
         <item>Стерадианы</item>
     </string-array>
+    <string name="title_activity_history">История</string>
 
+    <string name="action_settings">Settings</string>
+    <string name="find_hint">Введите текст для поиска</string>
 </resources>

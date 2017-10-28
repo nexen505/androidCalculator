@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
@@ -106,12 +105,15 @@ public class MainActivity extends AppCompatActivity
         switch (id) {
             case R.id.nav_calc:
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                break;
             case R.id.nav_history:
+                startActivity(new Intent(getApplicationContext(), HistoryActivity.class));
                 break;
             case R.id.nav_graphs:
                 break;
             case R.id.nav_settings:
-                startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+                startActivity(new Intent(getApplicationContext(), MyPreferencesActivity.class));
+                break;
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;

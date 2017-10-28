@@ -32,8 +32,11 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support:preference-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:26.+'
+    compile 'com.github.kizitonwose.colorpreference:core:1.0.3'
+    compile 'com.github.kizitonwose.colorpreference:support:1.0.3'
     compile 'com.github.QuadFlask:colorpicker:0.0.13'
     compile 'id.zelory:compressor:2.1.0'
     testCompile 'junit:junit:4.12'
