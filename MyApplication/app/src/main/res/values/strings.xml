@@ -67,7 +67,7 @@
     <string name="settings_text_summary">Отображаемое на экране имя пользователя</string>
     <string name="settings_switch_summary">Результаты будут сохраняться при закрытии программы</string>
     <string name="settings_color">Цвет</string>
-    <string name="settings_color_summary">Выбор основной цвет</string>
+    <string name="settings_color_summary">Выбор основного цвета</string>
 
     <string name="colorpicker_title">Выберите цвет</string>
     <string name="text_dialog_header">Введите текст</string>

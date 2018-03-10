@@ -53,6 +53,7 @@ public class HistoryActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_history);
 
         dateTextView = (TextView) findViewById(R.id.dateView);
         final Calendar c = Calendar.getInstance();

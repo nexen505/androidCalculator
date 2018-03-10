@@ -16,6 +16,6 @@
 
     <color name="settings_color">#43b4de</color>
     <color name="settings_divider_color">#202020</color>
-    <color name="floating_action_button_background">#4c4c4c</color>
+    <color name="floating_action_button_background">#599c8b</color>
     <color name="phone_action_bar_color">#a1e1cb</color>
 </resources>
